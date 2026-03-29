@@ -1,10 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Game Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What To Play Next</title>
 </head>
+
 <body>
-    <h1>My Gaming Site</h1>
-    <p>This is my project homepage.</p>
+
+    <header>
+        <h1>What To Play Next</h1>
+        <p>Find your next favorite game</p>
+    </header>
+
+    <section>
+        <input type="text" id="search" placeholder="Search games...">
+
+        <select id="filter">
+            <option value="all">All</option>
+            <option value="action">Action</option>
+            <option value="rpg">RPG</option>
+            <option value="multiplayer">Multiplayer</option>
+            <option value="adventure">Adventure</option>
+        </select>
+    </section>
+
+    <main>
+
+        <div class="game" data-category="action">
+            <h2>GTA V</h2>
+            <p>Open-world action game with missions and free roam.</p>
+        </div>
+
+        <div class="game" data-category="rpg">
+            <h2>The Witcher 3</h2>
+            <p>Story-driven RPG with monsters and choices.</p>
+        </div>
+
+        <div class="game" data-category="multiplayer">
+            <h2>Fortnite</h2>
+            <p>Online battle royale game with building and fighting.</p>
+        </div>
+
+        <div class="game" data-category="adventure">
+            <h2>Minecraft</h2>
+            <p>Sandbox game where you can build and explore.</p>
+        </div>
+
+    </main>
+
+    <script>
+        const search = document.getElementById("search");
+        const filter = document.getElementById("filter");
+        const games = document.querySelectorAll(".game");
+
+        function updateGames() {
+            const searchValue = search.value.toLowerCase();
+            const filterValue = filter.value;
+
+            games.forEach(game => {
+                const title = game.querySelector("h2").innerText.toLowerCase();
+                const category = game.getAttribute("data-category");
+
+                const matchesSearch = title.includes(searchValue);
+                const matchesFilter = filterValue === "all" || category === filterValue;
+
+                if (matchesSearch && matchesFilter) {
+                    game.style.display = "block";
+                } else {
+                    game.style.display = "none";
+                }
+            });
+        }
+
+        search.addEventListener("input", updateGames);
+        filter.addEventListener("change", updateGames);
+    </script>
+
 </body>
 </html>
