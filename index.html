@@ -110,11 +110,13 @@ input {
     border-radius: 10px;
     border: 1px solid #333;
     transition: 0.3s;
+    position: relative;
 }
 
 .game-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
     border-color: var(--accent);
+    z-index: 5;
 }
 
 .game-card h3 {
@@ -136,13 +138,6 @@ footer {
     <h1>What To Play Next</h1>
     <p>Find your next favorite game</p>
 </header>
-
-<!-- THEME BUTTONS -->
-<div class="top-bar">
-    <button onclick="setTheme('light')">Light</button>
-    <button onclick="setTheme('dark')">Dark</button>
-    <button onclick="setTheme('auto')">Auto</button>
-</div>
 
 <!-- CAROUSEL -->
 <div class="carousel">
@@ -233,6 +228,13 @@ footer {
     <div class="game-card"><h3>Where Winds Meet</h3><p>Wuxia RPG.</p></div>
     <div class="game-card"><h3>Wuthering Waves</h3><p>Anime action RPG.</p></div>
 
+</div>
+
+    <!-- THEME BUTTONS -->
+<div class="top-bar">
+    <button onclick="setTheme('light')">Light</button>
+    <button onclick="setTheme('dark')">Dark</button>
+    <button onclick="setTheme('auto')">Auto</button>
 </div>
 
 <footer>© 2026 What To Play Next</footer>
