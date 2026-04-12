@@ -92,7 +92,8 @@
 <div class="container">
 
     <div class="search-box">
-        <input type="text" placeholder="Search games...">
+        
+        <input type="text" id="search" placeholder="Search games...">
     </div>
 
     <div class="game-grid">
@@ -124,6 +125,25 @@
 <footer>
     © 2026 What To Play Next
 </footer>
+
+<script>
+const search = document.getElementById("search");
+const games = document.querySelectorAll(".game-card");
+
+search.addEventListener("input", function () {
+    const value = search.value.toLowerCase();
+
+    games.forEach(game => {
+        const title = game.querySelector("h3").innerText.toLowerCase();
+
+        if (title.includes(value)) {
+            game.style.display = "block";
+        } else {
+            game.style.display = "none";
+        }
+    });
+});
+</script>
 
 </body>
 </html>
