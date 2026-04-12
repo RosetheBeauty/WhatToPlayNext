@@ -6,80 +6,113 @@
 <title>What To Play Next</title>
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #0f0f0f;
-        color: white;
-    }
+:root {
+    --bg: #0f0f0f;
+    --card: #1a1a1a;
+    --text: white;
+    --accent: #f47521;
+}
 
-    header {
-        background: linear-gradient(90deg, #f47521, #ff8c42);
-        padding: 20px;
-        text-align: center;
-    }
+body.light {
+    --bg: #f5f5f5;
+    --card: white;
+    --text: black;
+}
 
-    header h1 {
-        margin: 0;
-        font-size: 32px;
-    }
+body.morning { background: linear-gradient(#ffb347, #ffcc33); }
+body.day { background: linear-gradient(#89f7fe, #66a6ff); }
+body.night { background: linear-gradient(#0f0f0f, #1a1a2e); }
 
-    header p {
-        margin: 5px 0 0;
-        font-size: 14px;
-    }
+body {
+    margin: 0;
+    font-family: Arial;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: 0.5s;
+}
 
-    .container {
-        padding: 20px;
-    }
+header {
+    background: linear-gradient(90deg, #f47521, #ff8c42);
+    padding: 20px;
+    text-align: center;
+}
 
-    .search-box {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
 
-    input {
-        padding: 10px;
-        width: 80%;
-        max-width: 400px;
-        border-radius: 5px;
-        border: none;
-        outline: none;
-    }
+.top-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    flex-wrap: wrap;
+}
 
-    .game-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
-    }
+button {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
-    .game-card {
-        background-color: #1a1a1a;
-        border: 1px solid #333;
-        padding: 15px;
-        border-radius: 10px;
-        transition: 0.2s;
-    }
+.search-box {
+    text-align: center;
+    margin: 15px;
+}
 
-    .game-card:hover {
-        transform: scale(1.03);
-        border-color: #f47521;
-    }
+input {
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+}
 
-    .game-card h3 {
-        margin-top: 0;
-        color: #f47521;
-    }
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+}
 
-    footer {
-        text-align: center;
-        padding: 15px;
-        margin-top: 20px;
-        color: #777;
-        font-size: 12px;
-    }
+.carousel div {
+    min-width: 200px;
+    background: var(--card);
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.game-card {
+    background: var(--card);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+    border-color: var(--accent);
+}
+
+.game-card h3 {
+    color: var(--accent);
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+}
 </style>
-
 </head>
 
 <body>
@@ -89,100 +122,151 @@
     <p>Find your next favorite game</p>
 </header>
 
-<div class="container">
-
-    <div class="search-box">
-        
-        <input type="text" id="search" placeholder="Search games...">
-    </div>
-
-    <div class="game-grid">
-
-        <div class="game-card">
-            <h3>GTA V</h3>
-            <p>Open-world action game with missions and free roam gameplay.</p>
-        </div>
-
-        <div class="game-card">
-            <h3>Minecraft</h3>
-            <p>Build, explore, and survive in a block-style world.</p>
-        </div>
-
-        <div class="game-card">
-            <h3>Fortnite</h3>
-            <p>Battle royale game with building and fast-paced combat.</p>
-        </div>
-
-        <div class="game-card">
-            <h3>The Witcher 3</h3>
-            <p>Story-driven RPG with monsters and deep choices.</p>
-       <div class="game-card">
-    <h3>Call of Duty: Warzone</h3>
-    <p>Fast-paced battle royale shooter with intense multiplayer action.</p>
+<div class="top-bar">
+    <button onclick="setTheme('light')">Light</button>
+    <button onclick="setTheme('dark')">Dark</button>
+    <button onclick="setTheme('auto')">Auto</button>
 </div>
 
-<div class="game-card">
-    <h3>Elden Ring</h3>
-    <p>Open-world RPG with challenging combat and deep exploration.</p>
+<div class="carousel">
+    <div>Elden Ring</div>
+    <div>GTA V</div>
+    <div>Minecraft</div>
+    <div>Baldur’s Gate</div>
+    <div>Starfield</div>
 </div>
 
-<div class="game-card">
-    <h3>Apex Legends</h3>
-    <p>Team-based battle royale with unique characters and abilities.</p>
+<div class="search-box">
+    <input type="text" id="search" placeholder="Search games...">
 </div>
 
-<div class="game-card">
-    <h3>Red Dead Redemption 2</h3>
-    <p>Story-rich open-world game set in the Wild West.</p>
+<div class="game-grid">
+
+    <!-- A -->
+    <div class="game-card"><h3>Apex Legends</h3><p>Battle royale shooter.</p></div>
+    <div class="game-card"><h3>Arc Raiders</h3><p>Sci-fi extraction shooter.</p></div>
+    <div class="game-card"><h3>Astro Bot</h3><p>Platform adventure game.</p></div>
+
+    <!-- B -->
+    <div class="game-card"><h3>Baldur’s Gate</h3><p>Fantasy RPG adventure.</p></div>
+    <div class="game-card"><h3>Balatro</h3><p>Poker roguelike strategy game.</p></div>
+    <div class="game-card"><h3>Bugsnax</h3><p>Creature-catching adventure.</p></div>
+
+    <!-- C -->
+    <div class="game-card"><h3>Call of Duty: Warzone</h3><p>Battle royale shooter.</p></div>
+    <div class="game-card"><h3>Cyberpunk 2077</h3><p>Futuristic open-world RPG.</p></div>
+
+    <!-- D -->
+    <div class="game-card"><h3>Deadlock</h3><p>Team shooter.</p></div>
+    <div class="game-card"><h3>Destiny</h3><p>Sci-fi shooter MMO.</p></div>
+    <div class="game-card"><h3>Dreamlight Valley</h3><p>Disney life sim.</p></div>
+    <div class="game-card"><h3>Dinkum</h3><p>Survival life sim.</p></div>
+
+    <!-- E -->
+    <div class="game-card"><h3>Elden Ring</h3><p>Hard fantasy RPG.</p></div>
+
+    <!-- F -->
+    <div class="game-card"><h3>Fallout</h3><p>Post-apocalyptic RPG.</p></div>
+    <div class="game-card"><h3>Fortnite</h3><p>Battle royale game.</p></div>
+
+    <!-- G -->
+    <div class="game-card"><h3>Genshin Impact</h3><p>Anime open-world RPG.</p></div>
+    <div class="game-card"><h3>GTA V</h3><p>Open-world action game.</p></div>
+    <div class="game-card"><h3>GTA 5 Online</h3><p>Online GTA mode.</p></div>
+    <div class="game-card"><h3>Grounded 2</h3><p>Mini survival game.</p></div>
+
+    <!-- H -->
+    <div class="game-card"><h3>Halo</h3><p>Classic shooter.</p></div>
+    <div class="game-card"><h3>Helldivers</h3><p>Co-op chaos shooter.</p></div>
+    <div class="game-card"><h3>Hogwarts Legacy</h3><p>Magic RPG adventure.</p></div>
+
+    <!-- I -->
+    <div class="game-card"><h3>Inkbound</h3><p>Roguelike adventure.</p></div>
+    <div class="game-card"><h3>Infinity Nikki</h3><p>Fashion adventure game.</p></div>
+
+    <!-- K -->
+    <div class="game-card"><h3>Kingdom Come Deliverance</h3><p>Realistic medieval RPG.</p></div>
+
+    <!-- M -->
+    <div class="game-card"><h3>MapleStory</h3><p>2D MMORPG.</p></div>
+    <div class="game-card"><h3>Mewgenics</h3><p>Strategy breeding game.</p></div>
+    <div class="game-card"><h3>Monster Hunter Wilds</h3><p>Monster hunting RPG.</p></div>
+
+    <!-- N -->
+    <div class="game-card"><h3>No Man’s Sky</h3><p>Space exploration game.</p></div>
+
+    <!-- O -->
+    <div class="game-card"><h3>Oxygen Not Included</h3><p>Space colony sim.</p></div>
+    <div class="game-card"><h3>Overcooked</h3><p>Cooking chaos game.</p></div>
+    <div class="game-card"><h3>Overwatch</h3><p>Hero shooter.</p></div>
+
+    <!-- P -->
+    <div class="game-card"><h3>Palworld</h3><p>Creature survival game.</p></div>
+    <div class="game-card"><h3>PlateUp</h3><p>Cooking management game.</p></div>
+    <div class="game-card"><h3>PUBG</h3><p>Battle royale shooter.</p></div>
+
+    <!-- R -->
+    <div class="game-card"><h3>Red Dead Redemption 2</h3><p>Western adventure.</p></div>
+    <div class="game-card"><h3>Resident Evil Requiem</h3><p>Horror survival.</p></div>
+    <div class="game-card"><h3>RimWorld</h3><p>Colony simulator.</p></div>
+    <div class="game-card"><h3>Roblox</h3><p>User-created games.</p></div>
+    <div class="game-card"><h3>Rust</h3><p>Survival PvP game.</p></div>
+
+    <!-- S -->
+    <div class="game-card"><h3>Satisfactory</h3><p>Factory building sim.</p></div>
+    <div class="game-card"><h3>Skyrim</h3><p>Fantasy RPG.</p></div>
+    <div class="game-card"><h3>Slay the Spire 2</h3><p>Card roguelike.</p></div>
+    <div class="game-card"><h3>Smite</h3><p>Mythology MOBA.</p></div>
+    <div class="game-card"><h3>Starfield</h3><p>Space RPG.</p></div>
+    <div class="game-card"><h3>Stardew Valley</h3><p>Farming sim.</p></div>
+    <div class="game-card"><h3>Sun Haven</h3><p>Fantasy farming RPG.</p></div>
+
+    <!-- T -->
+    <div class="game-card"><h3>The Sims 4</h3><p>Life simulation.</p></div>
+    <div class="game-card"><h3>The Witcher 3</h3><p>Fantasy RPG.</p></div>
+    <div class="game-card"><h3>Town to City</h3><p>City builder.</p></div>
+    <div class="game-card"><h3>Two Point Museum</h3><p>Management sim.</p></div>
+
+    <!-- W -->
+    <div class="game-card"><h3>Warframe</h3><p>Sci-fi shooter.</p></div>
+    <div class="game-card"><h3>Where Winds Meet</h3><p>Wuxia RPG.</p></div>
+    <div class="game-card"><h3>Wuthering Waves</h3><p>Anime action RPG.</p></div>
+
 </div>
 
-<div class="game-card">
-    <h3>Roblox</h3>
-    <p>Platform with many user-created games and experiences.</p>
-</div>
-
-<div class="game-card">
-    <h3>Cyberpunk 2077</h3>
-    <p>Futuristic RPG set in a detailed open-world city.</p>
-</div>
-
-<div class="game-card">
-    <h3>Among Us</h3>
-    <p>Multiplayer game where players find the imposter.</p>
-</div>
-
-<div class="game-card">
-    <h3>Valorant</h3>
-    <p>Competitive shooter with precise gunplay and abilities.</p>
-</div>
-        
-        </div>
-
-    </div>
-
-</div>
-
-<footer>
-    © 2026 What To Play Next
-</footer>
+<footer>© 2026 What To Play Next</footer>
 
 <script>
+
+/* SEARCH */
 const search = document.getElementById("search");
 const games = document.querySelectorAll(".game-card");
 
-search.addEventListener("input", function () {
+search.addEventListener("input", () => {
     const value = search.value.toLowerCase();
-
     games.forEach(game => {
         const title = game.querySelector("h3").innerText.toLowerCase();
-
-        if (title.includes(value)) {
-            game.style.display = "block";
-        } else {
-            game.style.display = "none";
-        }
+        game.style.display = title.includes(value) ? "block" : "none";
     });
 });
+
+/* THEME */
+function setTheme(mode) {
+    document.body.classList.remove("light", "morning", "day", "night");
+
+    if (mode === "light") document.body.classList.add("light");
+    if (mode === "dark") document.body.classList.add("night");
+
+    if (mode === "auto") {
+        let hour = new Date().getHours();
+        if (hour < 12) document.body.classList.add("morning");
+        else if (hour < 18) document.body.classList.add("day");
+        else document.body.classList.add("night");
+    }
+}
+
+setTheme("auto");
+
 </script>
 
 </body>
