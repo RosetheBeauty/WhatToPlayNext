@@ -35,6 +35,24 @@ The repository contains:
 
 ---
 
+## Tools Used
+
+- **HTML** – Used to build the structure of the website.  
+- **CSS** – Used for styling, layout, colors, and responsive design.  
+- **JavaScript** – Used for search, theme toggle, and interactive features.  
+- **GitHub** – Used to store project files and version control.  
+- **GitHub Pages** – Used to publish the website online.  
+
+## How to Visit It
+
+**Live Website:** https://rosethebeauty.github.io/WhatToPlayNext/  
+
+**GitHub Repository:** https://github.com/rosethebeauty/WhatToPlayNext
+
+## Project Summary
+
+This project demonstrates web development skills using HTML, CSS, and JavaScript. It focuses on building a clean, functional, and interactive website that helps users discover video games in an easy way. The project can continue growing with more advanced features in the future.
+
 ## Project Summary
 
 This project demonstrates basic web development skills using HTML, CSS, and JavaScript. It focuses on building a simple, clean, and functional website that helps users discover and organize video games in an easy way. The goal is to create a foundation for a more advanced gaming discovery platform in the future.
