@@ -30,8 +30,7 @@ The repository contains:
 
 - **index.html** – The homepage showing the game list and main layout.  
 - **style.css** – The styling for layout, colors, and design.  
-- **script.js** – Adds interactivity like search and filtering.  
-- **images/** – Folder containing game images and visual assets.  
+- **script.js** – Adds interactivity like search and filtering.   
 - **README.md** – Project documentation describing the website.  
 
 ---
