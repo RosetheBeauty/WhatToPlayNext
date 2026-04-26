@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>What To Play Next</title>
 
-<!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
 
 <style>
@@ -23,7 +22,7 @@ body.light {
     --text: black;
 }
 
-/* TIME OF DAY BACKGROUNDS */
+/* BACKGROUNDS */
 body.morning { background: linear-gradient(#ffb347, #ffcc33); }
 body.day { background: linear-gradient(#89f7fe, #66a6ff); }
 body.night { background: linear-gradient(#0f0f0f, #1a1a2e); }
@@ -44,11 +43,6 @@ header {
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 34px;
-}
-
 /* TOP BAR */
 .top-bar {
     display: flex;
@@ -58,11 +52,27 @@ header h1 {
     flex-wrap: wrap;
 }
 
+/* FILTER BAR */
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
 button {
     padding: 8px 12px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid #333;
+}
+
+button:hover {
+    border-color: var(--accent);
 }
 
 /* SEARCH */
@@ -113,6 +123,10 @@ input {
     position: relative;
 }
 
+.game-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
 
 .game-card h3 {
     color: var(--accent);
@@ -134,6 +148,22 @@ footer {
     <p>Find your next favorite game</p>
 </header>
 
+<!-- THEME BUTTONS -->
+<div class="top-bar">
+    <button onclick="setTheme('light')">Light</button>
+    <button onclick="setTheme('dark')">Dark</button>
+    <button onclick="setTheme('auto')">Auto</button>
+</div>
+
+<!-- CATEGORY FILTER (NEW FEATURE) -->
+<div class="filter-bar">
+    <button onclick="filterGames('all')">All</button>
+    <button onclick="filterGames('rpg')">RPG</button>
+    <button onclick="filterGames('shooter')">Shooter</button>
+    <button onclick="filterGames('survival')">Survival</button>
+    <button onclick="filterGames('cozy')">Cozy</button>
+</div>
+
 <!-- CAROUSEL -->
 <div class="carousel">
     <div>Elden Ring</div>
@@ -151,102 +181,56 @@ footer {
 <!-- GAME GRID -->
 <div class="game-grid">
 
-    <div class="game-card"><h3>Apex Legends</h3><p>Battle royale shooter.</p></div>
-    <div class="game-card"><h3>Arc Raiders</h3><p>Sci-fi extraction shooter.</p></div>
-    <div class="game-card"><h3>Astro Bot</h3><p>Platform adventure game.</p></div>
+    <div class="game-card" data-category="shooter"><h3>Apex Legends</h3><p>Battle royale shooter.</p></div>
+    <div class="game-card" data-category="shooter"><h3>Arc Raiders</h3><p>Sci-fi extraction shooter.</p></div>
+    <div class="game-card" data-category="cozy"><h3>Astro Bot</h3><p>Platform adventure game.</p></div>
 
-    <div class="game-card"><h3>Baldur’s Gate</h3><p>Fantasy RPG adventure.</p></div>
-    <div class="game-card"><h3>Balatro</h3><p>Poker roguelike strategy game.</p></div>
-    <div class="game-card"><h3>Bugsnax</h3><p>Creature-catching adventure.</p></div>
+    <div class="game-card" data-category="rpg"><h3>Baldur’s Gate</h3><p>Fantasy RPG adventure.</p></div>
+    <div class="game-card" data-category="cozy"><h3>Balatro</h3><p>Poker roguelike strategy game.</p></div>
+    <div class="game-card" data-category="cozy"><h3>Bugsnax</h3><p>Creature-catching adventure.</p></div>
 
-    <div class="game-card"><h3>Call of Duty: Warzone</h3><p>Battle royale shooter.</p></div>
-    <div class="game-card"><h3>Cyberpunk 2077</h3><p>Futuristic open-world RPG.</p></div>
+    <div class="game-card" data-category="shooter"><h3>Call of Duty: Warzone</h3><p>Battle royale shooter.</p></div>
+    <div class="game-card" data-category="rpg"><h3>Cyberpunk 2077</h3><p>Futuristic open-world RPG.</p></div>
 
-    <div class="game-card"><h3>Deadlock</h3><p>Team shooter.</p></div>
-    <div class="game-card"><h3>Destiny</h3><p>Sci-fi shooter MMO.</p></div>
-    <div class="game-card"><h3>Dreamlight Valley</h3><p>Cozy life sim.</p></div>
-    <div class="game-card"><h3>Dinkum</h3><p>Survival life sim.</p></div>
+    <div class="game-card" data-category="shooter"><h3>Halo</h3><p>Classic shooter.</p></div>
+    <div class="game-card" data-category="survival"><h3>Rust</h3><p>Survival PvP game.</p></div>
 
-    <div class="game-card"><h3>Elden Ring</h3><p>Hard fantasy RPG.</p></div>
+    <div class="game-card" data-category="cozy"><h3>Stardew Valley</h3><p>Farming sim.</p></div>
+    <div class="game-card" data-category="rpg"><h3>Skyrim</h3><p>Fantasy RPG.</p></div>
 
-    <div class="game-card"><h3>Fallout</h3><p>Post-apocalyptic RPG.</p></div>
-    <div class="game-card"><h3>Fortnite</h3><p>Battle royale game.</p></div>
-
-    <div class="game-card"><h3>Genshin Impact</h3><p>Anime open-world RPG.</p></div>
-    <div class="game-card"><h3>GTA V</h3><p>Open-world action game.</p></div>
-    <div class="game-card"><h3>GTA 5 Online</h3><p>Online GTA mode.</p></div>
-    <div class="game-card"><h3>Grounded 2</h3><p>Mini survival game.</p></div>
-
-    <div class="game-card"><h3>Halo</h3><p>Classic shooter.</p></div>
-    <div class="game-card"><h3>Helldivers</h3><p>Co-op chaos shooter.</p></div>
-    <div class="game-card"><h3>Hogwarts Legacy</h3><p>Magic RPG adventure.</p></div>
-
-    <div class="game-card"><h3>Inkbound</h3><p>Roguelike adventure.</p></div>
-    <div class="game-card"><h3>Infinity Nikki</h3><p>Fashion adventure game.</p></div>
-
-    <div class="game-card"><h3>Kingdom Come Deliverance</h3><p>Realistic medieval RPG.</p></div>
-
-    <div class="game-card"><h3>MapleStory</h3><p>2D MMORPG.</p></div>
-    <div class="game-card"><h3>Mewgenics</h3><p>Strategy breeding game.</p></div>
-    <div class="game-card"><h3>Monster Hunter Wilds</h3><p>Monster hunting RPG.</p></div>
-
-    <div class="game-card"><h3>No Man’s Sky</h3><p>Space exploration game.</p></div>
-
-    <div class="game-card"><h3>Oxygen Not Included</h3><p>Space colony sim.</p></div>
-    <div class="game-card"><h3>Overcooked</h3><p>Cooking chaos game.</p></div>
-    <div class="game-card"><h3>Overwatch</h3><p>Hero shooter.</p></div>
-
-    <div class="game-card"><h3>Palworld</h3><p>Creature survival game.</p></div>
-    <div class="game-card"><h3>PlateUp</h3><p>Cooking management game.</p></div>
-    <div class="game-card"><h3>PUBG</h3><p>Battle royale shooter.</p></div>
-
-    <div class="game-card"><h3>Red Dead Redemption 2</h3><p>Western adventure.</p></div>
-    <div class="game-card"><h3>Resident Evil Requiem</h3><p>Horror survival.</p></div>
-    <div class="game-card"><h3>RimWorld</h3><p>Colony simulator.</p></div>
-    <div class="game-card"><h3>Roblox</h3><p>User-created games.</p></div>
-    <div class="game-card"><h3>Rust</h3><p>Survival PvP game.</p></div>
-
-    <div class="game-card"><h3>Satisfactory</h3><p>Factory building sim.</p></div>
-    <div class="game-card"><h3>Skyrim</h3><p>Fantasy RPG.</p></div>
-    <div class="game-card"><h3>Slay the Spire 2</h3><p>Card roguelike.</p></div>
-    <div class="game-card"><h3>Smite</h3><p>Mythology MOBA.</p></div>
-    <div class="game-card"><h3>Starfield</h3><p>Space RPG.</p></div>
-    <div class="game-card"><h3>Stardew Valley</h3><p>Farming sim.</p></div>
-    <div class="game-card"><h3>Sun Haven</h3><p>Fantasy farming RPG.</p></div>
-
-    <div class="game-card"><h3>The Sims 4</h3><p>Life simulation.</p></div>
-    <div class="game-card"><h3>The Witcher 3</h3><p>Fantasy RPG.</p></div>
-    <div class="game-card"><h3>Town to City</h3><p>City builder.</p></div>
-    <div class="game-card"><h3>Two Point Museum</h3><p>Management sim.</p></div>
-
-    <div class="game-card"><h3>Warframe</h3><p>Sci-fi shooter.</p></div>
-    <div class="game-card"><h3>Where Winds Meet</h3><p>Wuxia RPG.</p></div>
-    <div class="game-card"><h3>Wuthering Waves</h3><p>Anime action RPG.</p></div>
-
-</div>
-
-    <!-- THEME BUTTONS -->
-<div class="top-bar">
-    <button onclick="setTheme('light')">Light</button>
-    <button onclick="setTheme('dark')">Dark</button>
-    <button onclick="setTheme('auto')">Auto</button>
 </div>
 
 <footer>© 2026 What To Play Next</footer>
 
 <script>
 
+/* SEARCH */
 const search = document.getElementById("search");
 const games = document.querySelectorAll(".game-card");
 
 search.addEventListener("input", () => {
     const value = search.value.toLowerCase();
+
     games.forEach(game => {
         const title = game.querySelector("h3").innerText.toLowerCase();
         game.style.display = title.includes(value) ? "block" : "none";
     });
 });
 
+/* CATEGORY FILTER */
+function filterGames(category) {
+    games.forEach(game => {
+        const gameCategory = game.getAttribute("data-category");
+
+        if (category === "all" || gameCategory === category) {
+            game.style.display = "block";
+        } else {
+            game.style.display = "none";
+        }
+    });
+}
+
+/* THEME */
 function setTheme(mode) {
     document.body.classList.remove("light", "morning", "day", "night");
 
