@@ -101,13 +101,16 @@ input {
     display: flex;
     overflow-x: auto;
     gap: 10px;
-    padding: 10px;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .carousel div {
-    min-width: 200px;
+    min-width: 220px;
+    flex: 0 0 auto;
     background: var(--card);
-    padding: 10px;
+    padding: 12px;
     border-radius: 10px;
     border: 1px solid #2a3550;
 }
