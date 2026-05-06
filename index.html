@@ -125,7 +125,22 @@ input {
 .game-card h3 {
     color: var(--accent);
 }
+/* game card image*/
+.game-card img {
+    width: 100%;
+    height: 160px;        /* fixed height = all same size */
+    object-fit: cover;    /* crops image instead of stretching */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: block;
+}    
+.game-card img {
+    transition: transform 0.2s ease;
+}
 
+.game-card:hover img {
+    transform: scale(1.05);
+}    
 /* FOOTER */
 footer {
     text-align: center;
@@ -167,79 +182,276 @@ footer {
 <!-- GAME GRID -->
 <div class="game-grid">
 
-<!-- ALL YOUR GAMES (kept + categorized) -->
+<!-- ALL YOUR GAMES -->
 
-<div class="game-card" data-category="shooter"><h3>Apex Legends</h3><p>Battle royale shooter.</p></div>
-<div class="game-card" data-category="shooter"><h3>Arc Raiders</h3><p>Sci-fi extraction shooter.</p></div>
-<div class="game-card" data-category="cozy"><h3>Astro Bot</h3><p>Platform adventure game.</p></div>
+<div class="game-card" data-category="shooter">
+  <img src="https://via.placeholder.com/300x160" alt="Apex Legends">
+  <h3>Apex Legends</h3><p>Battle royale shooter.</p>
+</div>
 
-<div class="game-card" data-category="rpg"><h3>Baldur’s Gate</h3><p>Fantasy RPG adventure.</p></div>
-<div class="game-card" data-category="cozy"><h3>Balatro</h3><p>Poker roguelike strategy game.</p></div>
-<div class="game-card" data-category="cozy"><h3>Bugsnax</h3><p>Creature-catching adventure.</p></div>
+<div class="game-card" data-category="shooter">
+  <img src="https://via.placeholder.com/300x160" alt="Arc Raiders">
+  <h3>Arc Raiders</h3><p>Sci-fi extraction shooter.</p>
+</div>
 
-<div class="game-card" data-category="shooter"><h3>Call of Duty: Warzone</h3><p>Battle royale shooter.</p></div>
-<div class="game-card" data-category="rpg"><h3>Cyberpunk 2077</h3><p>Futuristic open-world RPG.</p></div>
+<div class="game-card" data-category="cozy">
+  <img src="https://via.placeholder.com/300x160" alt="Astro Bot">
+  <h3>Astro Bot</h3><p>Platform adventure game.</p>
+</div>
 
-<div class="game-card" data-category="shooter"><h3>Deadlock</h3><p>Team shooter.</p></div>
-<div class="game-card" data-category="shooter"><h3>Destiny</h3><p>Sci-fi shooter MMO.</p></div>
-<div class="game-card" data-category="cozy"><h3>Dreamlight Valley</h3><p>Cozy life sim.</p></div>
-<div class="game-card" data-category="survival"><h3>Dinkum</h3><p>Survival life sim.</p></div>
+<div class="game-card" data-category="rpg">
+  <img src="https://via.placeholder.com/300x160" alt="Baldur’s Gate">
+  <h3>Baldur’s Gate</h3><p>Fantasy RPG adventure.</p>
+</div>
 
-<div class="game-card" data-category="rpg"><h3>Elden Ring</h3><p>Hard fantasy RPG.</p></div>
+<div class="game-card" data-category="cozy">
+  <img src="https://via.placeholder.com/300x160" alt="Balatro">
+  <h3>Balatro</h3><p>Poker roguelike strategy game.</p>
+</div>
 
-<div class="game-card" data-category="rpg"><h3>Fallout</h3><p>Post-apocalyptic RPG.</p></div>
-<div class="game-card" data-category="shooter"><h3>Fortnite</h3><p>Battle royale game.</p></div>
+<div class="game-card" data-category="cozy">
+  <img src="https://via.placeholder.com/300x160" alt="Bugsnax">
+  <h3>Bugsnax</h3><p>Creature-catching adventure.</p>
+</div>
 
-<div class="game-card" data-category="rpg"><h3>Genshin Impact</h3><p>Anime open-world RPG.</p></div>
-<div class="game-card" data-category="shooter"><h3>GTA V</h3><p>Open-world action game.</p></div>
-<div class="game-card" data-category="shooter"><h3>GTA 5 Online</h3><p>Online GTA mode.</p></div>
-<div class="game-card" data-category="survival"><h3>Grounded 2</h3><p>Mini survival game.</p></div>
+<div class="game-card" data-category="shooter">
+  <img src="https://via.placeholder.com/300x160" alt="Call of Duty Warzone">
+  <h3>Call of Duty: Warzone</h3><p>Battle royale shooter.</p>
+</div>
 
-<div class="game-card" data-category="shooter"><h3>Halo</h3><p>Classic shooter.</p></div>
-<div class="game-card" data-category="shooter"><h3>Helldivers</h3><p>Co-op chaos shooter.</p></div>
-<div class="game-card" data-category="rpg"><h3>Hogwarts Legacy</h3><p>Magic RPG adventure.</p></div>
+<div class="game-card" data-category="rpg">
+  <img src="https://via.placeholder.com/300x160" alt="Cyberpunk 2077">
+  <h3>Cyberpunk 2077</h3><p>Futuristic open-world RPG.</p>
+</div>
 
-<div class="game-card" data-category="cozy"><h3>Inkbound</h3><p>Roguelike adventure.</p></div>
-<div class="game-card" data-category="cozy"><h3>Infinity Nikki</h3><p>Fashion adventure game.</p></div>
+<div class="game-card" data-category="shooter">
+  <img src="https://via.placeholder.com/300x160" alt="Deadlock">
+  <h3>Deadlock</h3><p>Team shooter.</p>
+</div>
 
-<div class="game-card" data-category="rpg"><h3>Kingdom Come Deliverance</h3><p>Realistic medieval RPG.</p></div>
+<div class="game-card" data-category="shooter">
+  <img src="https://via.placeholder.com/300x160" alt="Destiny">
+  <h3>Destiny</h3><p>Sci-fi shooter MMO.</p>
+</div>
 
-<div class="game-card" data-category="mmo"><h3>MapleStory</h3><p>2D MMORPG.</p></div>
-<div class="game-card" data-category="cozy"><h3>Mewgenics</h3><p>Strategy breeding game.</p></div>
-<div class="game-card" data-category="rpg"><h3>Monster Hunter Wilds</h3><p>Monster hunting RPG.</p></div>
+<div class="game-card" data-category="cozy">
+  <img src="https://via.placeholder.com/300x160" alt="Dreamlight Valley">
+  <h3>Dreamlight Valley</h3><p>Cozy life sim.</p>
+</div>
 
-<div class="game-card" data-category="survival"><h3>No Man’s Sky</h3><p>Space exploration game.</p></div>
-<div class="game-card" data-category="survival"><h3>Oxygen Not Included</h3><p>Space colony sim.</p></div>
-<div class="game-card" data-category="cozy"><h3>Overcooked</h3><p>Cooking chaos game.</p></div>
-<div class="game-card" data-category="shooter"><h3>Overwatch</h3><p>Hero shooter.</p></div>
+<div class="game-card" data-category="survival">
+  <img src="https://via.placeholder.com/300x160" alt="Dinkum">
+  <h3>Dinkum</h3><p>Survival life sim.</p>
+</div>
 
-<div class="game-card" data-category="cozy"><h3>Palworld</h3><p>Creature survival game.</p></div>
-<div class="game-card" data-category="cozy"><h3>PlateUp</h3><p>Cooking management game.</p></div>
-<div class="game-card" data-category="shooter"><h3>PUBG</h3><p>Battle royale shooter.</p></div>
+<div class="game-card" data-category="rpg">
+  <img src="https://via.placeholder.com/300x160" alt="Elden Ring">
+  <h3>Elden Ring</h3><p>Hard fantasy RPG.</p>
+</div>
 
-<div class="game-card" data-category="rpg"><h3>Red Dead Redemption 2</h3><p>Western adventure.</p></div>
-<div class="game-card" data-category="survival"><h3>Resident Evil Requiem</h3><p>Horror survival.</p></div>
-<div class="game-card" data-category="survival"><h3>RimWorld</h3><p>Colony simulator.</p></div>
-<div class="game-card" data-category="cozy"><h3>Roblox</h3><p>User-created games.</p></div>
-<div class="game-card" data-category="survival"><h3>Rust</h3><p>Survival PvP game.</p></div>
+<div class="game-card" data-category="rpg">
+  <img src="https://via.placeholder.com/300x160" alt="Fallout">
+  <h3>Fallout</h3><p>Post-apocalyptic RPG.</p>
+</div>
 
-<div class="game-card" data-category="survival"><h3>Satisfactory</h3><p>Factory building sim.</p></div>
-<div class="game-card" data-category="rpg"><h3>Skyrim</h3><p>Fantasy RPG.</p></div>
-<div class="game-card" data-category="cozy"><h3>Slay the Spire 2</h3><p>Card roguelike.</p></div>
-<div class="game-card" data-category="shooter"><h3>Smite</h3><p>Mythology MOBA.</p></div>
-<div class="game-card" data-category="rpg"><h3>Starfield</h3><p>Space RPG.</p></div>
-<div class="game-card" data-category="cozy"><h3>Stardew Valley</h3><p>Farming sim.</p></div>
-<div class="game-card" data-category="cozy"><h3>Sun Haven</h3><p>Fantasy farming RPG.</p></div>
+<div class="game-card" data-category="shooter">
+  <img src="https://via.placeholder.com/300x160" alt="Fortnite">
+  <h3>Fortnite</h3><p>Battle royale game.</p>
+</div>
 
-<div class="game-card" data-category="cozy"><h3>The Sims 4</h3><p>Life simulation.</p></div>
-<div class="game-card" data-category="rpg"><h3>The Witcher 3</h3><p>Fantasy RPG.</p></div>
-<div class="game-card" data-category="cozy"><h3>Town to City</h3><p>City builder.</p></div>
-<div class="game-card" data-category="cozy"><h3>Two Point Museum</h3><p>Management sim.</p></div>
+<div class="game-card" data-category="rpg">
+  <img src="https://via.placeholder.com/300x160" alt="Genshin Impact">
+  <h3>Genshin Impact</h3><p>Anime open-world RPG.</p>
+</div>
 
-<div class="game-card" data-category="shooter"><h3>Warframe</h3><p>Sci-fi shooter.</p></div>
-<div class="game-card" data-category="rpg"><h3>Where Winds Meet</h3><p>Wuxia RPG.</p></div>
-<div class="game-card" data-category="rpg"><h3>Wuthering Waves</h3><p>Anime action RPG.</p></div>
+<div class="game-card" data-category="shooter">
+  <img src="https://via.placeholder.com/300x160" alt="GTA V">
+  <h3>GTA V</h3><p>Open-world action game.</p>
+</div>
 
+<div class="game-card" data-category="shooter">
+  <img src="https://via.placeholder.com/300x160" alt="GTA Online">
+  <h3>GTA 5 Online</h3><p>Online GTA mode.</p>
+</div>
+
+<div class="game-card" data-category="survival">
+  <img src="https://via.placeholder.com/300x160" alt="Grounded 2">
+  <h3>Grounded 2</h3><p>Mini survival game.</p>
+</div>
+
+<div class="game-card" data-category="shooter">
+  <img src="https://via.placeholder.com/300x160" alt="Halo">
+  <h3>Halo</h3><p>Classic shooter.</p>
+</div>
+
+<div class="game-card" data-category="shooter">
+  <img src="https://via.placeholder.com/300x160" alt="Helldivers">
+  <h3>Helldivers</h3><p>Co-op chaos shooter.</p>
+</div>
+
+<div class="game-card" data-category="rpg">
+  <img src="https://via.placeholder.com/300x160" alt="Hogwarts Legacy">
+  <h3>Hogwarts Legacy</h3><p>Magic RPG adventure.</p>
+</div>
+
+<div class="game-card" data-category="cozy">
+  <img src="https://via.placeholder.com/300x160" alt="Inkbound">
+  <h3>Inkbound</h3><p>Roguelike adventure.</p>
+</div>
+
+<div class="game-card" data-category="cozy">
+  <img src="https://via.placeholder.com/300x160" alt="Infinity Nikki">
+  <h3>Infinity Nikki</h3><p>Fashion adventure game.</p>
+</div>
+
+<div class="game-card" data-category="rpg">
+  <img src="https://via.placeholder.com/300x160" alt="Kingdom Come Deliverance">
+  <h3>Kingdom Come Deliverance</h3><p>Realistic medieval RPG.</p>
+</div>
+
+<div class="game-card" data-category="mmo">
+  <img src="https://via.placeholder.com/300x160" alt="MapleStory">
+  <h3>MapleStory</h3><p>2D MMORPG.</p>
+</div>
+
+<div class="game-card" data-category="cozy">
+  <img src="https://via.placeholder.com/300x160" alt="Mewgenics">
+  <h3>Mewgenics</h3><p>Strategy breeding game.</p>
+</div>
+
+<div class="game-card" data-category="rpg">
+  <img src="https://via.placeholder.com/300x160" alt="Monster Hunter Wilds">
+  <h3>Monster Hunter Wilds</h3><p>Monster hunting RPG.</p>
+</div>
+
+<div class="game-card" data-category="survival">
+  <img src="https://via.placeholder.com/300x160" alt="No Man's Sky">
+  <h3>No Man’s Sky</h3><p>Space exploration game.</p>
+</div>
+
+<div class="game-card" data-category="survival">
+  <img src="https://via.placeholder.com/300x160" alt="Oxygen Not Included">
+  <h3>Oxygen Not Included</h3><p>Space colony sim.</p>
+</div>
+
+<div class="game-card" data-category="cozy">
+  <img src="https://via.placeholder.com/300x160" alt="Overcooked">
+  <h3>Overcooked</h3><p>Cooking chaos game.</p>
+</div>
+
+<div class="game-card" data-category="shooter">
+  <img src="https://via.placeholder.com/300x160" alt="Overwatch">
+  <h3>Overwatch</h3><p>Hero shooter.</p>
+</div>
+
+<div class="game-card" data-category="cozy">
+  <img src="https://via.placeholder.com/300x160" alt="Palworld">
+  <h3>Palworld</h3><p>Creature survival game.</p>
+</div>
+
+<div class="game-card" data-category="cozy">
+  <img src="https://via.placeholder.com/300x160" alt="PlateUp">
+  <h3>PlateUp</h3><p>Cooking management game.</p>
+</div>
+
+<div class="game-card" data-category="shooter">
+  <img src="https://via.placeholder.com/300x160" alt="PUBG">
+  <h3>PUBG</h3><p>Battle royale shooter.</p>
+</div>
+
+<div class="game-card" data-category="rpg">
+  <img src="https://via.placeholder.com/300x160" alt="RDR2">
+  <h3>Red Dead Redemption 2</h3><p>Western adventure.</p>
+</div>
+
+<div class="game-card" data-category="survival">
+  <img src="https://via.placeholder.com/300x160" alt="Resident Evil">
+  <h3>Resident Evil Requiem</h3><p>Horror survival.</p>
+</div>
+
+<div class="game-card" data-category="survival">
+  <img src="https://via.placeholder.com/300x160" alt="RimWorld">
+  <h3>RimWorld</h3><p>Colony simulator.</p>
+</div>
+
+<div class="game-card" data-category="cozy">
+  <img src="https://via.placeholder.com/300x160" alt="Roblox">
+  <h3>Roblox</h3><p>User-created games.</p>
+</div>
+
+<div class="game-card" data-category="survival">
+  <img src="https://via.placeholder.com/300x160" alt="Rust">
+  <h3>Rust</h3><p>Survival PvP game.</p>
+</div>
+
+<div class="game-card" data-category="survival">
+  <img src="https://via.placeholder.com/300x160" alt="Satisfactory">
+  <h3>Satisfactory</h3><p>Factory building sim.</p>
+</div>
+
+<div class="game-card" data-category="rpg">
+  <img src="https://via.placeholder.com/300x160" alt="Skyrim">
+  <h3>Skyrim</h3><p>Fantasy RPG.</p>
+</div>
+
+<div class="game-card" data-category="cozy">
+  <img src="https://via.placeholder.com/300x160" alt="Slay the Spire 2">
+  <h3>Slay the Spire 2</h3><p>Card roguelike.</p>
+</div>
+
+<div class="game-card" data-category="shooter">
+  <img src="https://via.placeholder.com/300x160" alt="Smite">
+  <h3>Smite</h3><p>Mythology MOBA.</p>
+</div>
+
+<div class="game-card" data-category="rpg">
+  <img src="https://via.placeholder.com/300x160" alt="Starfield">
+  <h3>Starfield</h3><p>Space RPG.</p>
+</div>
+
+<div class="game-card" data-category="cozy">
+  <img src="https://via.placeholder.com/300x160" alt="Stardew Valley">
+  <h3>Stardew Valley</h3><p>Farming sim.</p>
+</div>
+
+<div class="game-card" data-category="cozy">
+  <img src="https://via.placeholder.com/300x160" alt="Sun Haven">
+  <h3>Sun Haven</h3><p>Fantasy farming RPG.</p>
+</div>
+
+<div class="game-card" data-category="cozy">
+  <img src="https://via.placeholder.com/300x160" alt="Sims 4">
+  <h3>The Sims 4</h3><p>Life simulation.</p>
+</div>
+
+<div class="game-card" data-category="rpg">
+  <img src="https://via.placeholder.com/300x160" alt="Witcher 3">
+  <h3>The Witcher 3</h3><p>Fantasy RPG.</p>
+</div>
+
+<div class="game-card" data-category="cozy">
+  <img src="https://via.placeholder.com/300x160" alt="Town to City">
+  <h3>Town to City</h3><p>City builder.</p>
+</div>
+
+<div class="game-card" data-category="cozy">
+  <img src="https://via.placeholder.com/300x160" alt="Two Point Museum">
+  <h3>Two Point Museum</h3><p>Management sim.</p>
+</div>
+
+<div class="game-card" data-category="shooter">
+  <img src="https://via.placeholder.com/300x160" alt="Warframe">
+  <h3>Warframe</h3><p>Sci-fi shooter.</p>
+</div>
+
+<div class="game-card" data-category="rpg">
+  <img src="https://via.placeholder.com/300x160" alt="Where Winds Meet">
+  <h3>Where Winds Meet</h3><p>Wuxia RPG.</p>
+</div>
+
+<div class="game-card" data-category="rpg">
+  <img src="https://via.placeholder.com/300x160" alt="Wuthering Waves">
+  <h3>Wuthering Waves</h3><p>Anime action RPG.</p>
 </div>
 
 <footer>© 2026 What To Play Next</footer>
